@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/mysql/sample/data_setting.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/dept.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/emp.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/emp_hist1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/emp_hist2.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/grade.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/sal1.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/sal2.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/sal3.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/sal4.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/sal5.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/mysql/sample/sal6.sql" dialect="MySQL" />
+  </component>
+</project>
