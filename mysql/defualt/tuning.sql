@@ -1,0 +1,16 @@
+# BEFORE
+EXPLAIN
+SELECT *
+FROM 사원
+WHERE SUBSTRING(사원번호, 1, 4) = 10
+  AND LENGTH(사원번호) = 5;
+
+# AFTER 1
+EXPLAIN
+SELECT *
+FROM 사원
+WHERE LENGTH(사원번호) = 5
+  AND SUBSTRING(사원번호, 1, 4) = 10;
+
+SELECT COUNT(1) FROM 사원;
+show index from 사원;
