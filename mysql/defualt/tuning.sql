@@ -100,14 +100,52 @@ SELECT *
 FROM 사원출입기록 IGNORE INDEX (I_출입문)
 WHERE 출입문 = 'B';
 
-EXPLAIN SELECT 이름, 성
+EXPLAIN
+SELECT 이름, 성
 FROM 사원
 WHERE 입사일자 BETWEEN
           STR_TO_DATE('1994-01-01', '%Y-%m-%d') AND
           STR_TO_DATE('2000-12-31', '%Y-%m-%d');
 
-EXPLAIN SELECT 이름, 성
+EXPLAIN
+SELECT 이름, 성
 FROM 사원
 WHERE YEAR(입사일자) BETWEEN
           '1994' AND
           '2000';
+
+EXPLAIN
+SELECT 매핑.사원번호, 부서.부서번호
+FROM 부서사원_매핑 매핑,
+     부서
+WHERE 매핑.부서번호 = 부서.부서번호
+  AND 매핑.시작일자 >= '2002-03-01';
+
+EXPLAIN
+SELECT 이름, 성
+FROM 사원
+WHERE YEAR(입사일자) BETWEEN
+          '1994' AND
+          '2000';
+
+EXPLAIN
+SELECT 매핑.사원번호, 부서.부서번호
+FROM 부서사원_매핑 매핑,
+     부서
+WHERE 매핑.부서번호 = 부서.부서번호
+  AND 매핑.시작일자 >= '2002-03-01';
+
+EXPLAIN
+SELECT STRAIGHT_JOIN 매핑.사원번호, 부서.부서번호
+FROM 부서사원_매핑 매핑,
+     부서
+WHERE 매핑.부서번호 = 부서.부서번호
+  AND 매핑.시작일자 >= '2002-03-01';
+
+
+EXPLAIN SELECT 사원.사원번호, 사원.이름, 사원.성
+FROM 사원
+WHERE 사원번호 > 450000
+  AND (SELECT MAX(연봉)
+       FROM 급여
+       WHERE 사원번호 = 사원.사원번호) > 100000
